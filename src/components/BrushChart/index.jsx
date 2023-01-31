@@ -182,13 +182,16 @@ export default function BrushChart() {
         setChartData1({
             ...newChartData
         })
-        setChartData2({
-            ...newChartData,
-            ...{
-                options: newChartDataOption2
-            }
-        }) 
-    }, [chartData1, chartData2.options])
+        
+        setTimeout(() => {
+            setChartData2({
+                ...newChartData,
+                ...{
+                    options: newChartDataOption2
+                }
+            }) 
+        }, 800);
+    }, [])
 
     
     return (
