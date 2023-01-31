@@ -181,7 +181,7 @@ export default function BrushChart() {
     return (
         <div id="chart">
             {
-                chartData1.series.data.length != 0?
+                chartData1.series[0].data.length != 0?
                     <Chart options={chartData1.options} series={chartData1.series} type="line" height={310} />
                 :
                 null
