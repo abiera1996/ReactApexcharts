@@ -96,10 +96,7 @@ export default function BrushChart() {
                 },
                 selection: {
                     enabled: true,
-                    xaxis: {
-                        min: 0,
-                        max: 0
-                    }
+                    xaxis: {max: 1662998400000, min: 1659283200000}
                 }
             },
             colors: ["green"],
@@ -169,28 +166,15 @@ export default function BrushChart() {
         })
 
         const newChartData = {...chartData1} 
-        const newChartDataOption2 = {...chartData2.options}
         newChartData.series[0].data = [...newData]
 
-        const randomNumber =  Math.floor(Math.random() * newData.length) + 0
-        const maxData = newData[randomNumber][0]
-        newChartDataOption2.chart.selection.xaxis = {
-            min: newData[0][0],
-            max: maxData
-        } 
-        
         setChartData1({
             ...newChartData
         })
         
-        setTimeout(() => {
-            setChartData2({
-                ...newChartData,
-                ...{
-                    options: newChartDataOption2
-                }
-            }) 
-        }, 800);
+        setChartData2({
+            ...newChartData
+        }) 
     }, [])
 
     
