@@ -183,7 +183,10 @@ export default function BrushChart() {
             ...newChartData
         })
         setChartData2({
-            ...newChartData
+            ...newChartData,
+            ...{
+                option: newChartDataOption2
+            }
         }) 
     }, [])
 
@@ -191,7 +194,7 @@ export default function BrushChart() {
     return (
         <div id="chart">
             <Chart options={chartData1.options} series={chartData1.series} type="line" height={310} />
-            <Chart options={chartData2.options} series={chartData1.series} type="line" height={310} />
+            <Chart options={chartData2.options} series={chartData2.series} type="line" height={310} />
         </div>
     );
 }
