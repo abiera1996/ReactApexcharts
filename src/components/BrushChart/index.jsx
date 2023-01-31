@@ -188,7 +188,7 @@ export default function BrushChart() {
                 options: newChartDataOption2
             }
         }) 
-    }, [])
+    }, [chartData1, chartData2.options])
 
     
     return (
